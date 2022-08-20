@@ -13,8 +13,12 @@ extension UIViewController {
         case push, present
     }
     
-    func transViewController(storyboardName: String) {
-        let sb = UIStoryboard(name: storyboardName, bundle: nil)
-//        let vc = sb.instantiateViewController(withIdentifier: <#T##String#>)
+    func transViewController<T: UIViewController>(ViewController vc: T, type: Transition) {
+        switch type {
+        case .push:
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .present:
+            present(vc, animated: true)
+        }
     }
 }
