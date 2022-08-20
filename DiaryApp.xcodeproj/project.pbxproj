@@ -21,6 +21,7 @@
 		85788BD328B10A58008EC5E0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BD228B10A58008EC5E0 /* SearchViewController.swift */; };
 		85788BD728B10AB7008EC5E0 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BD628B10AB7008EC5E0 /* UIViewController+Extension.swift */; };
 		85788BDC28B10BE8008EC5E0 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BDB28B10BE8008EC5E0 /* ReusableProtocol.swift */; };
+		85788BDE28B116C3008EC5E0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BDD28B116C3008EC5E0 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		85788BD228B10A58008EC5E0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		85788BD628B10AB7008EC5E0 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		85788BDB28B10BE8008EC5E0 /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
+		85788BDD28B116C3008EC5E0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				85788BD228B10A58008EC5E0 /* SearchViewController.swift */,
+				85788BDD28B116C3008EC5E0 /* SearchView.swift */,
 			);
 			path = Searh;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				8564B60228B0D5BF001A02BD /* DiaryViewController.swift in Sources */,
 				8564B5EA28B0D44A001A02BD /* SceneDelegate.swift in Sources */,
 				8564B60728B0D749001A02BD /* LightGrayTextField.swift in Sources */,
+				85788BDE28B116C3008EC5E0 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

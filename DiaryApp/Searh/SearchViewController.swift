@@ -8,11 +8,17 @@
 import UIKit
 
 class SearchViewController: BaseViewController {
+    
+    let searchView = SearchView()
+    
+    override func loadView() {
+        self.view = searchView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .red
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "선택", style: .done, target: self, action: nil)
     }
 
 }
