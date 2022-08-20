@@ -26,5 +26,7 @@ class DiaryViewController: BaseViewController {
     
     @objc func searchButtonClicked(_ sender: UIButton) {
         print(#function)
+        
+        
     }
 }

@@ -18,6 +18,7 @@
 		8564B60428B0D5DE001A02BD /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8564B60328B0D5DE001A02BD /* DiaryView.swift */; };
 		8564B60728B0D749001A02BD /* LightGrayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8564B60628B0D749001A02BD /* LightGrayTextField.swift */; };
 		8564B60A28B0DAE2001A02BD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8564B60928B0DAE2001A02BD /* SnapKit */; };
+		85788BD328B10A58008EC5E0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BD228B10A58008EC5E0 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		8564B60128B0D5BF001A02BD /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		8564B60328B0D5DE001A02BD /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		8564B60628B0D749001A02BD /* LightGrayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightGrayTextField.swift; sourceTree = "<group>"; };
+		85788BD228B10A58008EC5E0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		8564B5E628B0D44A001A02BD /* DiaryApp */ = {
 			isa = PBXGroup;
 			children = (
+				85788BD128B10A46008EC5E0 /* Searh */,
 				8564B60028B0D5A9001A02BD /* Diary */,
 				8564B5FB28B0D47E001A02BD /* Utility */,
 				8564B5E728B0D44A001A02BD /* AppDelegate.swift */,
@@ -103,6 +106,14 @@
 				8564B60628B0D749001A02BD /* LightGrayTextField.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		85788BD128B10A46008EC5E0 /* Searh */ = {
+			isa = PBXGroup;
+			children = (
+				85788BD228B10A58008EC5E0 /* SearchViewController.swift */,
+			);
+			path = Searh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +195,7 @@
 			files = (
 				8564B5FD28B0D4C8001A02BD /* BaseViewController.swift in Sources */,
 				8564B5FF28B0D4CE001A02BD /* BaseView.swift in Sources */,
+				85788BD328B10A58008EC5E0 /* SearchViewController.swift in Sources */,
 				8564B60428B0D5DE001A02BD /* DiaryView.swift in Sources */,
 				8564B5E828B0D44A001A02BD /* AppDelegate.swift in Sources */,
 				8564B60228B0D5BF001A02BD /* DiaryViewController.swift in Sources */,
