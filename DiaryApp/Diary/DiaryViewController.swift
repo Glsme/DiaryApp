@@ -8,6 +8,10 @@
 import UIKit
 
 class DiaryViewController: BaseViewController {
+    
+    override func loadView() {
+        self.view = DiaryView()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
