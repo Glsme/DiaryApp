@@ -15,6 +15,9 @@
 		8564B5F428B0D44B001A02BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8564B5F228B0D44B001A02BD /* LaunchScreen.storyboard */; };
 		8564B5FD28B0D4C8001A02BD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8564B5FC28B0D4C8001A02BD /* BaseViewController.swift */; };
 		8564B5FF28B0D4CE001A02BD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8564B5FE28B0D4CE001A02BD /* BaseView.swift */; };
+		8564B60228B0D5BF001A02BD /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8564B60128B0D5BF001A02BD /* DiaryViewController.swift */; };
+		8564B60428B0D5DE001A02BD /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8564B60328B0D5DE001A02BD /* DiaryView.swift */; };
+		8564B60728B0D749001A02BD /* LightGrayTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8564B60628B0D749001A02BD /* LightGrayTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		8564B5F528B0D44B001A02BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8564B5FC28B0D4C8001A02BD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8564B5FE28B0D4CE001A02BD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		8564B60128B0D5BF001A02BD /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		8564B60328B0D5DE001A02BD /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
+		8564B60628B0D749001A02BD /* LightGrayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightGrayTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 		8564B5E628B0D44A001A02BD /* DiaryApp */ = {
 			isa = PBXGroup;
 			children = (
+				8564B60028B0D5A9001A02BD /* Diary */,
 				8564B5FB28B0D47E001A02BD /* Utility */,
 				8564B5E728B0D44A001A02BD /* AppDelegate.swift */,
 				8564B5E928B0D44A001A02BD /* SceneDelegate.swift */,
@@ -75,10 +82,28 @@
 		8564B5FB28B0D47E001A02BD /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				8564B60528B0D730001A02BD /* CustomView */,
 				8564B5FC28B0D4C8001A02BD /* BaseViewController.swift */,
 				8564B5FE28B0D4CE001A02BD /* BaseView.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		8564B60028B0D5A9001A02BD /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				8564B60128B0D5BF001A02BD /* DiaryViewController.swift */,
+				8564B60328B0D5DE001A02BD /* DiaryView.swift */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		8564B60528B0D730001A02BD /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				8564B60628B0D749001A02BD /* LightGrayTextField.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,8 +180,11 @@
 				8564B5EC28B0D44A001A02BD /* ViewController.swift in Sources */,
 				8564B5FD28B0D4C8001A02BD /* BaseViewController.swift in Sources */,
 				8564B5FF28B0D4CE001A02BD /* BaseView.swift in Sources */,
+				8564B60428B0D5DE001A02BD /* DiaryView.swift in Sources */,
 				8564B5E828B0D44A001A02BD /* AppDelegate.swift in Sources */,
+				8564B60228B0D5BF001A02BD /* DiaryViewController.swift in Sources */,
 				8564B5EA28B0D44A001A02BD /* SceneDelegate.swift in Sources */,
+				8564B60728B0D749001A02BD /* LightGrayTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
