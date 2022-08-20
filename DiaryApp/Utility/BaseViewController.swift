@@ -12,6 +12,8 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        
+        configure()
     }
     
     func configure() { }

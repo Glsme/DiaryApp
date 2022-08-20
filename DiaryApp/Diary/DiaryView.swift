@@ -16,7 +16,7 @@ class DiaryView: BaseView {
         return view
     }()
     
-    let cameraButton: UIButton = {
+    let searchButton: UIButton = {
         let view = UIButton()
         view.layer.cornerRadius = 25
         view.backgroundColor = .darkGray
@@ -58,7 +58,7 @@ class DiaryView: BaseView {
     }
     
     override func configureUI() {
-        [selectImageView, firstTextField, secondTextField, userTextView, cameraButton].forEach {
+        [selectImageView, firstTextField, secondTextField, userTextView, searchButton].forEach {
             self.addSubview($0)
         }
     }
@@ -71,7 +71,7 @@ class DiaryView: BaseView {
             make.topMargin.equalTo(self.safeAreaLayoutGuide).offset(20)
         }
         
-        cameraButton.snp.makeConstraints { make in
+        searchButton.snp.makeConstraints { make in
             make.centerX.equalTo(selectImageView.snp.trailing).multipliedBy(0.95)
             make.centerY.equalTo(selectImageView.snp.bottom).multipliedBy(0.95)
             make.width.height.equalTo(50)

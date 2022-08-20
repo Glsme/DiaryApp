@@ -9,8 +9,10 @@ import UIKit
 
 class DiaryViewController: BaseViewController {
     
+    let diaryView = DiaryView()
+    
     override func loadView() {
-        self.view = DiaryView()
+        self.view = diaryView
     }
 
     override func viewDidLoad() {
@@ -19,6 +21,10 @@ class DiaryViewController: BaseViewController {
     }
 
     override func configure() {
-        //
+        diaryView.searchButton.addTarget(self, action: #selector(searchButtonClicked(_:)), for: .touchUpInside)
+    }
+    
+    @objc func searchButtonClicked(_ sender: UIButton) {
+        print(#function)
     }
 }
