@@ -20,6 +20,7 @@
 		8564B60A28B0DAE2001A02BD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8564B60928B0DAE2001A02BD /* SnapKit */; };
 		85788BD328B10A58008EC5E0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BD228B10A58008EC5E0 /* SearchViewController.swift */; };
 		85788BD728B10AB7008EC5E0 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BD628B10AB7008EC5E0 /* UIViewController+Extension.swift */; };
+		85788BDC28B10BE8008EC5E0 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BDB28B10BE8008EC5E0 /* ReusableProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		8564B60628B0D749001A02BD /* LightGrayTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightGrayTextField.swift; sourceTree = "<group>"; };
 		85788BD228B10A58008EC5E0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		85788BD628B10AB7008EC5E0 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		85788BDB28B10BE8008EC5E0 /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		8564B5E628B0D44A001A02BD /* DiaryApp */ = {
 			isa = PBXGroup;
 			children = (
+				85788BDA28B10BD6008EC5E0 /* Protocol */,
 				85788BD528B10A9F008EC5E0 /* Extension */,
 				85788BD128B10A46008EC5E0 /* Searh */,
 				8564B60028B0D5A9001A02BD /* Diary */,
@@ -125,6 +128,14 @@
 				85788BD628B10AB7008EC5E0 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		85788BDA28B10BD6008EC5E0 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				85788BDB28B10BE8008EC5E0 /* ReusableProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +217,7 @@
 			files = (
 				85788BD728B10AB7008EC5E0 /* UIViewController+Extension.swift in Sources */,
 				8564B5FD28B0D4C8001A02BD /* BaseViewController.swift in Sources */,
+				85788BDC28B10BE8008EC5E0 /* ReusableProtocol.swift in Sources */,
 				8564B5FF28B0D4CE001A02BD /* BaseView.swift in Sources */,
 				85788BD328B10A58008EC5E0 /* SearchViewController.swift in Sources */,
 				8564B60428B0D5DE001A02BD /* DiaryView.swift in Sources */,
