@@ -10,6 +10,9 @@ import UIKit
 class SearchViewController: BaseViewController {
     
     let searchView = SearchView()
+    var startPage = 1
+    var totalCount = 0
+    var imageList: [String] = []
     
     override func loadView() {
         self.view = searchView
@@ -19,7 +22,7 @@ class SearchViewController: BaseViewController {
         super.viewDidLoad()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "선택", style: .done, target: self, action: nil)
-        NaverAPIManager.shared.callRequest(query: "apple")
+        fetchImage(query: "apple")
     }
     
     override func configure() {
@@ -28,18 +31,26 @@ class SearchViewController: BaseViewController {
         searchView.imageCollectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: SearchCollectionViewCell.reuseIdentifier)
     }
     
+    func fetchImage(query: String) {
+        NaverAPIManager.shared.callRequest(query: query, startPage: startPage) { totalCount, list in
+            self.totalCount = totalCount
+            self.imageList = list
+            self.searchView.imageCollectionView.reloadData()
+        }
+    }
+    
 }
 
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return imageList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.reuseIdentifier, for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.backgroundColor = .red
+        cell.setImage(data: imageList[indexPath.item])
         
         return cell
     }

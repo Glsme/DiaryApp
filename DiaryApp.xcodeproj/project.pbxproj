@@ -30,6 +30,7 @@
 		85788C0428B3C6A2008EC5E0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 85788C0328B3C6A2008EC5E0 /* Alamofire */; };
 		85788C0728B3C6AD008EC5E0 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 85788C0628B3C6AD008EC5E0 /* SwiftyJSON */; };
 		85788C0A28B3C74E008EC5E0 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C0928B3C74E008EC5E0 /* EndPoint.swift */; };
+		85788C0C28B3CC31008EC5E0 /* UnSplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C0B28B3CC31008EC5E0 /* UnSplashAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		85788BFD28B3C3C1008EC5E0 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		85788C0028B3C5AF008EC5E0 /* NaverAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPIManager.swift; sourceTree = "<group>"; };
 		85788C0928B3C74E008EC5E0 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		85788C0B28B3CC31008EC5E0 /* UnSplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnSplashAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				85788C0028B3C5AF008EC5E0 /* NaverAPIManager.swift */,
+				85788C0B28B3CC31008EC5E0 /* UnSplashAPIManager.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				85788BDC28B10BE8008EC5E0 /* ReusableProtocol.swift in Sources */,
 				8564B5FF28B0D4CE001A02BD /* BaseView.swift in Sources */,
 				85788BD328B10A58008EC5E0 /* SearchViewController.swift in Sources */,
+				85788C0C28B3CC31008EC5E0 /* UnSplashAPIManager.swift in Sources */,
 				8564B60428B0D5DE001A02BD /* DiaryView.swift in Sources */,
 				8564B5E828B0D44A001A02BD /* AppDelegate.swift in Sources */,
 				8564B60228B0D5BF001A02BD /* DiaryViewController.swift in Sources */,
