@@ -23,6 +23,13 @@
 		85788BDC28B10BE8008EC5E0 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BDB28B10BE8008EC5E0 /* ReusableProtocol.swift */; };
 		85788BDE28B116C3008EC5E0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BDD28B116C3008EC5E0 /* SearchView.swift */; };
 		85788BF628B35F25008EC5E0 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BF528B35F25008EC5E0 /* SearchCollectionViewCell.swift */; };
+		85788BF928B36384008EC5E0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 85788BF828B36384008EC5E0 /* Kingfisher */; };
+		85788BFB28B3C3A2008EC5E0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 85788BFA28B3C3A2008EC5E0 /* .gitignore */; };
+		85788BFE28B3C3C1008EC5E0 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BFD28B3C3C1008EC5E0 /* APIKey.swift */; };
+		85788C0128B3C5AF008EC5E0 /* NaverAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C0028B3C5AF008EC5E0 /* NaverAPIManager.swift */; };
+		85788C0428B3C6A2008EC5E0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 85788C0328B3C6A2008EC5E0 /* Alamofire */; };
+		85788C0728B3C6AD008EC5E0 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 85788C0628B3C6AD008EC5E0 /* SwiftyJSON */; };
+		85788C0A28B3C74E008EC5E0 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C0928B3C74E008EC5E0 /* EndPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +50,10 @@
 		85788BDB28B10BE8008EC5E0 /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 		85788BDD28B116C3008EC5E0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		85788BF528B35F25008EC5E0 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		85788BFA28B3C3A2008EC5E0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		85788BFD28B3C3C1008EC5E0 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		85788C0028B3C5AF008EC5E0 /* NaverAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPIManager.swift; sourceTree = "<group>"; };
+		85788C0928B3C74E008EC5E0 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +61,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85788C0428B3C6A2008EC5E0 /* Alamofire in Frameworks */,
+				85788BF928B36384008EC5E0 /* Kingfisher in Frameworks */,
+				85788C0728B3C6AD008EC5E0 /* SwiftyJSON in Frameworks */,
 				8564B60A28B0DAE2001A02BD /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +74,7 @@
 		8564B5DB28B0D44A001A02BD = {
 			isa = PBXGroup;
 			children = (
+				85788BFA28B3C3A2008EC5E0 /* .gitignore */,
 				8564B5E628B0D44A001A02BD /* DiaryApp */,
 				8564B5E528B0D44A001A02BD /* Products */,
 			);
@@ -76,6 +91,8 @@
 		8564B5E628B0D44A001A02BD /* DiaryApp */ = {
 			isa = PBXGroup;
 			children = (
+				85788BFF28B3C585008EC5E0 /* APIManager */,
+				85788BFC28B3C3B4008EC5E0 /* Key */,
 				85788BDA28B10BD6008EC5E0 /* Protocol */,
 				85788BD528B10A9F008EC5E0 /* Extension */,
 				85788BD128B10A46008EC5E0 /* Searh */,
@@ -144,6 +161,23 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		85788BFC28B3C3B4008EC5E0 /* Key */ = {
+			isa = PBXGroup;
+			children = (
+				85788BFD28B3C3C1008EC5E0 /* APIKey.swift */,
+				85788C0928B3C74E008EC5E0 /* EndPoint.swift */,
+			);
+			path = Key;
+			sourceTree = "<group>";
+		};
+		85788BFF28B3C585008EC5E0 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				85788C0028B3C5AF008EC5E0 /* NaverAPIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,6 +196,9 @@
 			name = DiaryApp;
 			packageProductDependencies = (
 				8564B60928B0DAE2001A02BD /* SnapKit */,
+				85788BF828B36384008EC5E0 /* Kingfisher */,
+				85788C0328B3C6A2008EC5E0 /* Alamofire */,
+				85788C0628B3C6AD008EC5E0 /* SwiftyJSON */,
 			);
 			productName = DiaryApp;
 			productReference = 8564B5E428B0D44A001A02BD /* DiaryApp.app */;
@@ -193,6 +230,9 @@
 			mainGroup = 8564B5DB28B0D44A001A02BD;
 			packageReferences = (
 				8564B60828B0DAE2001A02BD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				85788BF728B36384008EC5E0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				85788C0228B3C6A2008EC5E0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				85788C0528B3C6AD008EC5E0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 8564B5E528B0D44A001A02BD /* Products */;
 			projectDirPath = "";
@@ -208,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85788BFB28B3C3A2008EC5E0 /* .gitignore in Resources */,
 				8564B5F428B0D44B001A02BD /* LaunchScreen.storyboard in Resources */,
 				8564B5F128B0D44B001A02BD /* Assets.xcassets in Resources */,
 				8564B5EF28B0D44A001A02BD /* Main.storyboard in Resources */,
@@ -232,6 +273,9 @@
 				8564B60228B0D5BF001A02BD /* DiaryViewController.swift in Sources */,
 				8564B5EA28B0D44A001A02BD /* SceneDelegate.swift in Sources */,
 				8564B60728B0D749001A02BD /* LightGrayTextField.swift in Sources */,
+				85788C0128B3C5AF008EC5E0 /* NaverAPIManager.swift in Sources */,
+				85788C0A28B3C74E008EC5E0 /* EndPoint.swift in Sources */,
+				85788BFE28B3C3C1008EC5E0 /* APIKey.swift in Sources */,
 				85788BDE28B116C3008EC5E0 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +504,30 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		85788BF728B36384008EC5E0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		85788C0228B3C6A2008EC5E0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		85788C0528B3C6AD008EC5E0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -467,6 +535,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8564B60828B0DAE2001A02BD /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		85788BF828B36384008EC5E0 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85788BF728B36384008EC5E0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		85788C0328B3C6A2008EC5E0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85788C0228B3C6A2008EC5E0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		85788C0628B3C6AD008EC5E0 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85788C0528B3C6AD008EC5E0 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

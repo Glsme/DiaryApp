@@ -14,11 +14,12 @@ class SearchViewController: BaseViewController {
     override func loadView() {
         self.view = searchView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "선택", style: .done, target: self, action: nil)
+        NaverAPIManager.shared.callRequest(query: "apple")
     }
     
     override func configure() {
@@ -26,7 +27,7 @@ class SearchViewController: BaseViewController {
         searchView.imageCollectionView.dataSource = self
         searchView.imageCollectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: SearchCollectionViewCell.reuseIdentifier)
     }
-
+    
 }
 
 
