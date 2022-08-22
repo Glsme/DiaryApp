@@ -20,7 +20,7 @@ class DiaryView: BaseView {
         let view = UIButton()
         view.layer.cornerRadius = 25
         view.backgroundColor = .darkGray
-        view.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        view.setImage(UIImage(systemName: "photo"), for: .normal)
         view.tintColor = .white
         
         return view

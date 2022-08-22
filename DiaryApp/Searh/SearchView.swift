@@ -17,6 +17,12 @@ class SearchView: BaseView {
         return view
     }()
     
+    let imageCollectionView: UICollectionView = {
+        let view = UICollectionView(frame: .zero, collectionViewLayout: searchCollectionViewLayout())
+        view.backgroundColor = .darkGray
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -26,7 +32,7 @@ class SearchView: BaseView {
     }
     
     override func configureUI() {
-        [searchBar].forEach{
+        [searchBar, imageCollectionView].forEach{
             self.addSubview($0)
         }
     }
@@ -39,6 +45,24 @@ class SearchView: BaseView {
             make.trailing.equalTo(self.snp.trailing)
             make.leading.equalTo(self.snp.trailing)
         }
+        
+        imageCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom)
+            make.bottom.equalTo(self.safeAreaLayoutGuide)
+            make.leading.trailing.equalTo(self)
+        }
+    }
+    
+    static func searchCollectionViewLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        let spacing:CGFloat = 8
+        let width = UIScreen.main.bounds.width - (spacing * 4)
+        layout.itemSize = CGSize(width: width / 3, height: width / 3)
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        return layout
     }
     
 }

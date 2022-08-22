@@ -22,6 +22,7 @@
 		85788BD728B10AB7008EC5E0 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BD628B10AB7008EC5E0 /* UIViewController+Extension.swift */; };
 		85788BDC28B10BE8008EC5E0 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BDB28B10BE8008EC5E0 /* ReusableProtocol.swift */; };
 		85788BDE28B116C3008EC5E0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BDD28B116C3008EC5E0 /* SearchView.swift */; };
+		85788BF628B35F25008EC5E0 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788BF528B35F25008EC5E0 /* SearchCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		85788BD628B10AB7008EC5E0 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		85788BDB28B10BE8008EC5E0 /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 		85788BDD28B116C3008EC5E0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		85788BF528B35F25008EC5E0 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				85788BD228B10A58008EC5E0 /* SearchViewController.swift */,
 				85788BDD28B116C3008EC5E0 /* SearchView.swift */,
+				85788BF528B35F25008EC5E0 /* SearchCollectionViewCell.swift */,
 			);
 			path = Searh;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			files = (
 				85788BD728B10AB7008EC5E0 /* UIViewController+Extension.swift in Sources */,
 				8564B5FD28B0D4C8001A02BD /* BaseViewController.swift in Sources */,
+				85788BF628B35F25008EC5E0 /* SearchCollectionViewCell.swift in Sources */,
 				85788BDC28B10BE8008EC5E0 /* ReusableProtocol.swift in Sources */,
 				8564B5FF28B0D4CE001A02BD /* BaseView.swift in Sources */,
 				85788BD328B10A58008EC5E0 /* SearchViewController.swift in Sources */,
