@@ -9,6 +9,8 @@ import UIKit
 
 class DiaryViewController: BaseViewController {
     
+    static var currentImage = ""
+    
     let diaryView = DiaryView()
     
     override func loadView() {
@@ -18,6 +20,14 @@ class DiaryViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(#function)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print(#function)
+        changeImage(image: DiaryViewController.currentImage)
     }
 
     override func configure() {
@@ -28,5 +38,13 @@ class DiaryViewController: BaseViewController {
         print(#function)
         
         transViewController(ViewController: SearchViewController(), type: .push)
+    }
+    
+    func changeImage(image: String) {
+        print(image)
+        
+        if image != "" {
+            diaryView.selectImageView.kf.setImage(with: URL(string: image))
+        }
     }
 }

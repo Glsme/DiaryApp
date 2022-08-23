@@ -9,9 +9,11 @@ import UIKit
 import SnapKit
 
 class DiaryView: BaseView {
+    
     let selectImageView: UIImageView = {
         let view = UIImageView()
         view.backgroundColor = .lightGray
+        view.contentMode = .scaleAspectFit
         
         return view
     }()

@@ -27,7 +27,7 @@ class NaverAPIManager {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print(json)
+//                print(json)
                 
                 let totalCount = json["total"].intValue
                 let list = json["items"].arrayValue.map{ $0["link"].stringValue }

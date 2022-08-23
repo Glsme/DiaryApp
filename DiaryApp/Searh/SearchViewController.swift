@@ -95,4 +95,12 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
+        
+        DiaryViewController.currentImage = imageList[indexPath.item]
+        
+        self.navigationController?.popViewController(animated: true)
+    }
 }
