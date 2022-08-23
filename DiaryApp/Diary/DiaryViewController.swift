@@ -20,13 +20,11 @@ class DiaryViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(#function)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        print(#function)
         changeImage(image: DiaryViewController.currentImage)
     }
 
@@ -41,8 +39,6 @@ class DiaryViewController: BaseViewController {
     }
     
     func changeImage(image: String) {
-        print(image)
-        
         if image != "" {
             diaryView.selectImageView.kf.setImage(with: URL(string: image))
         }
