@@ -50,7 +50,7 @@ class DiaryView: BaseView {
         view.layer.borderColor = UIColor.lightGray.cgColor
         view.layer.borderWidth = 2
         view.layer.cornerRadius = 5
-        view.textColor = .white
+        view.textColor = .black
         
         return view
     }()

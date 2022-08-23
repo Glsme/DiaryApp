@@ -24,6 +24,6 @@ class LightGrayBordTextField: UITextField {
         textAlignment = .center
         layer.borderWidth = 2
         layer.borderColor = UIColor.lightGray.cgColor
-        textColor = .white
+        textColor = .black
     }
 }
