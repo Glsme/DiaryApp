@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 import Alamofire
 import SwiftyJSON
 
@@ -15,13 +16,14 @@ class NaverAPIManager {
     private init() { }
     
     private let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
+    
     typealias completionHandler = (Int, [String]) -> Void
     
     func callRequest(query: String, startPage: Int, completionHandler: @escaping completionHandler ) {
-        //https://openapi.naver.com/v1/search/image.json?query=과자&display=30&start=31
-        let url = "\(EndPoint.naverSearchImageURL)query=\(query)&display=10start=1"
+        let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = "\(EndPoint.naverSearchImageURL)query=\(text)&display=30&start=\(startPage)"
         
-        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseData { response in
+        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseData(queue: .global()) { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)

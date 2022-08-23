@@ -24,6 +24,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         configureUI()
+        setContraints()
     }
     
     required init?(coder: NSCoder) {
