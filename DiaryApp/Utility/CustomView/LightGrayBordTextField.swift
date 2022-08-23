@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LightGrayTextField: UITextField {
+class LightGrayBordTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -19,9 +19,11 @@ class LightGrayTextField: UITextField {
     }
     
     func setView() {
-        backgroundColor = .lightGray
+        backgroundColor = .white
         layer.cornerRadius = 5
         textAlignment = .center
+        layer.borderWidth = 2
+        layer.borderColor = UIColor.lightGray.cgColor
         textColor = .white
     }
 }

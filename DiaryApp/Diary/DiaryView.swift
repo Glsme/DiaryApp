@@ -14,6 +14,8 @@ class DiaryView: BaseView {
         let view = UIImageView()
         view.backgroundColor = .lightGray
         view.contentMode = .scaleAspectFit
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 5
         
         return view
     }()
@@ -28,15 +30,15 @@ class DiaryView: BaseView {
         return view
     }()
     
-    let firstTextField: LightGrayTextField = {
-        let view = LightGrayTextField()
+    let firstTextField: LightGrayBordTextField = {
+        let view = LightGrayBordTextField()
         view.placeholder = "제목"
         
         return view
     }()
     
-    let secondTextField: LightGrayTextField = {
-        let view = LightGrayTextField()
+    let secondTextField: LightGrayBordTextField = {
+        let view = LightGrayBordTextField()
         view.placeholder = "날짜"
         
         return view
@@ -44,7 +46,10 @@ class DiaryView: BaseView {
     
     let userTextView: UITextView = {
         let view = UITextView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
+        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderWidth = 2
+        view.layer.cornerRadius = 5
         view.textColor = .white
         
         return view
