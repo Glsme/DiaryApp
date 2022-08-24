@@ -31,6 +31,8 @@
 		85788C0728B3C6AD008EC5E0 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 85788C0628B3C6AD008EC5E0 /* SwiftyJSON */; };
 		85788C0A28B3C74E008EC5E0 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C0928B3C74E008EC5E0 /* EndPoint.swift */; };
 		85788C0C28B3CC31008EC5E0 /* UnSplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C0B28B3CC31008EC5E0 /* UnSplashAPIManager.swift */; };
+		85788C1228B602AD008EC5E0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C1128B602AD008EC5E0 /* HomeViewController.swift */; };
+		85788C1428B60407008EC5E0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C1328B60407008EC5E0 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		85788C0028B3C5AF008EC5E0 /* NaverAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPIManager.swift; sourceTree = "<group>"; };
 		85788C0928B3C74E008EC5E0 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		85788C0B28B3CC31008EC5E0 /* UnSplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnSplashAPIManager.swift; sourceTree = "<group>"; };
+		85788C1128B602AD008EC5E0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		85788C1328B60407008EC5E0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 		8564B5E628B0D44A001A02BD /* DiaryApp */ = {
 			isa = PBXGroup;
 			children = (
+				85788C1028B6024E008EC5E0 /* Home */,
 				85788BFF28B3C585008EC5E0 /* APIManager */,
 				85788BFC28B3C3B4008EC5E0 /* Key */,
 				85788BDA28B10BD6008EC5E0 /* Protocol */,
@@ -179,6 +184,15 @@
 				85788C0B28B3CC31008EC5E0 /* UnSplashAPIManager.swift */,
 			);
 			path = APIManager;
+			sourceTree = "<group>";
+		};
+		85788C1028B6024E008EC5E0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				85788C1128B602AD008EC5E0 /* HomeViewController.swift */,
+				85788C1328B60407008EC5E0 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,11 +282,13 @@
 				85788BD728B10AB7008EC5E0 /* UIViewController+Extension.swift in Sources */,
 				8564B5FD28B0D4C8001A02BD /* BaseViewController.swift in Sources */,
 				85788BF628B35F25008EC5E0 /* SearchCollectionViewCell.swift in Sources */,
+				85788C1228B602AD008EC5E0 /* HomeViewController.swift in Sources */,
 				85788BDC28B10BE8008EC5E0 /* ReusableProtocol.swift in Sources */,
 				8564B5FF28B0D4CE001A02BD /* BaseView.swift in Sources */,
 				85788BD328B10A58008EC5E0 /* SearchViewController.swift in Sources */,
 				85788C0C28B3CC31008EC5E0 /* UnSplashAPIManager.swift in Sources */,
 				8564B60428B0D5DE001A02BD /* DiaryView.swift in Sources */,
+				85788C1428B60407008EC5E0 /* HomeView.swift in Sources */,
 				8564B5E828B0D44A001A02BD /* AppDelegate.swift in Sources */,
 				8564B60228B0D5BF001A02BD /* DiaryViewController.swift in Sources */,
 				8564B5EA28B0D44A001A02BD /* SceneDelegate.swift in Sources */,
