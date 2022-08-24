@@ -12,7 +12,7 @@ class DiaryListTableViewCell: UITableViewCell {
     
     let preImageView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .red
+        view.backgroundColor = .lightGray
         
         return view
     }()

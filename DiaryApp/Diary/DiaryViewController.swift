@@ -80,3 +80,10 @@ class DiaryViewController: BaseViewController {
         }
     }
 }
+
+extension DiaryViewController: SelectImageDelegate {
+    func sendImageData(image: UIImage) {
+        diaryView.selectImageView.image = image
+        print(#function)
+    }
+}

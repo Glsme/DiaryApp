@@ -21,7 +21,7 @@ class SearchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "선택", style: .done, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "선택", style: .done, target: self, action: #selector(selectButtonClciked))
     }
     
     override func configure() {
@@ -40,6 +40,10 @@ class SearchViewController: BaseViewController {
                 self.searchView.imageCollectionView.reloadData()
             }
         }
+    }
+    
+    @objc func selectButtonClciked() {
+        
     }
     
 }

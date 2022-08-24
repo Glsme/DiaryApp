@@ -38,6 +38,7 @@
 		85788C1B28B621E8008EC5E0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 85788C1A28B621E8008EC5E0 /* RealmSwift */; };
 		85788C1E28B626F4008EC5E0 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C1D28B626F4008EC5E0 /* RealmModel.swift */; };
 		85788C2128B63411008EC5E0 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 85788C2028B63411008EC5E0 /* Toast */; };
+		85788C2328B66114008EC5E0 /* SelectImageDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C2228B66114008EC5E0 /* SelectImageDelegateProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		85788C1328B60407008EC5E0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		85788C1528B6077F008EC5E0 /* DiaryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListTableViewCell.swift; sourceTree = "<group>"; };
 		85788C1D28B626F4008EC5E0 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		85788C2228B66114008EC5E0 /* SelectImageDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageDelegateProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				85788BDB28B10BE8008EC5E0 /* ReusableProtocol.swift */,
+				85788C2228B66114008EC5E0 /* SelectImageDelegateProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				8564B5E828B0D44A001A02BD /* AppDelegate.swift in Sources */,
 				8564B60228B0D5BF001A02BD /* DiaryViewController.swift in Sources */,
 				8564B5EA28B0D44A001A02BD /* SceneDelegate.swift in Sources */,
+				85788C2328B66114008EC5E0 /* SelectImageDelegateProtocol.swift in Sources */,
 				85788C1E28B626F4008EC5E0 /* RealmModel.swift in Sources */,
 				8564B60728B0D749001A02BD /* LightGrayBordTextField.swift in Sources */,
 				85788C0128B3C5AF008EC5E0 /* NaverAPIManager.swift in Sources */,
