@@ -11,6 +11,7 @@ import RealmSwift
 class UserDiary: Object {
     @Persisted var diaryTitle: String       // 제목(필수)
     @Persisted var diaryContent: String?    //내용(옵션)
+    @Persisted var diaryKeyword: String     //키워드
     @Persisted var diaryDate = Date()       //작성 날짜(필수)
     @Persisted var regDate = Date()         //등록 날짜(필수)
     @Persisted var favorite: Bool           //즐겨찾기(필수)
@@ -18,9 +19,10 @@ class UserDiary: Object {
     
     @Persisted(primaryKey: true) var objectId: ObjectId
     
-    convenience init(diaryTitle: String, diaryContent: String?, diaryDate: Date, regDate: Date, favorite: Bool, photo: String?) {
+    convenience init(diaryTitle: String, diaryKeyword: String, diaryContent: String?, diaryDate: Date, regDate: Date, favorite: Bool, photo: String?) {
         self.init()
         self.diaryTitle = diaryTitle
+        self.diaryKeyword = diaryKeyword
         self.diaryContent = diaryContent
         self.diaryDate = diaryDate
         self.regDate = regDate

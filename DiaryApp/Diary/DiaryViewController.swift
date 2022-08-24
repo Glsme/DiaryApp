@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import RealmSwift
+import Toast
 
 class DiaryViewController: BaseViewController {
     
     static var currentImage = ""
+    
+    let localRealm = try! Realm()
     
     let diaryView = DiaryView()
     
@@ -38,6 +42,23 @@ class DiaryViewController: BaseViewController {
     }
     
     @objc func saveButtonCliced() {
+        guard let title = diaryView.firstTextField.text else {
+            self.view.makeToast("제목을 입력해주세요")
+            return
+        }
+        guard let keyword = diaryView.secondTextField.text else {
+            self.view.makeToast("키워드를 입력해주세요")
+            return
+        }
+        let content = diaryView.userTextView.text
+        let task = UserDiary(diaryTitle: title, diaryKeyword: keyword, diaryContent: content, diaryDate: Date(), regDate: Date(), favorite: false, photo: nil)
+        
+        try! localRealm.write {
+            localRealm.add(task)
+            print("Realm Succeed")
+            
+        }
+        
         dismiss(animated: true)
     }
     

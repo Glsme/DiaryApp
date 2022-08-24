@@ -6,10 +6,19 @@
 //
 
 import UIKit
+import RealmSwift
 
 class HomeViewController: BaseViewController {
     
     let homeView = HomeView()
+    
+    let localRealm = try! Realm()
+    var tasks: Results<UserDiary>! {
+        didSet {
+            homeView.diaryListTableView.reloadData()
+            print("TableView reloaded")
+        }
+    }
     
     override func loadView() {
         self.view = homeView
@@ -18,6 +27,8 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tasks = localRealm.objects(UserDiary.self)
+        print("Realm is located at:", localRealm.configuration.fileURL!)    // Realm file directory
     }
     
     override func configure() {
@@ -40,11 +51,15 @@ class HomeViewController: BaseViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DiaryListTableViewCell.reuseIdentifier, for: indexPath) as? DiaryListTableViewCell else { return UITableViewCell() }
+        
+        cell.titleLabel.text = tasks[indexPath.row].diaryTitle
+        cell.dateLabel.text = String(describing: tasks[indexPath.row].diaryDate)
+        cell.regDateLabel.text = String(describing: tasks[indexPath.row].regDate)
         
         return cell
     }

@@ -39,7 +39,7 @@ class DiaryView: BaseView {
     
     let secondTextField: LightGrayBordTextField = {
         let view = LightGrayBordTextField()
-        view.placeholder = "날짜"
+        view.placeholder = "키워드"
         
         return view
     }()
