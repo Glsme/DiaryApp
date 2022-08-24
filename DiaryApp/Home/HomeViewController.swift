@@ -60,7 +60,7 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func settingButtonClicked() {
-        
+        transViewController(ViewController: SettingViewController(), type: .presentFullScreenNavigation)
     }
 }
 
