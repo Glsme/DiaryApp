@@ -9,10 +9,6 @@ import UIKit
 import RealmSwift
 import Toast
 
-protocol SelectImageDelegate {
-    func sendImageData(image: UIImage)
-}
-
 class DiaryViewController: BaseViewController {
     
     let localRealm = try! Realm()
@@ -72,7 +68,9 @@ class DiaryViewController: BaseViewController {
     @objc func searchButtonClicked(_ sender: UIButton) {
         print(#function)
         
-        transViewController(ViewController: SearchViewController(), type: .presentFullScreenNavigation)
+        let vc = SearchViewController()
+        vc.delegate = self
+        transViewController(ViewController: vc, type: .presentFullScreenNavigation)
     }
 }
 

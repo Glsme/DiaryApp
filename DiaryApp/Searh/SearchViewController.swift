@@ -51,15 +51,14 @@ class SearchViewController: BaseViewController {
     }
     
     @objc func selectButtonClciked() {
-        guard let image = selectImage else {
+        guard let selectImage = selectImage else {
             self.view.makeToast("사진을 선택해주세요")
             return
         }
 
-        delegate?.sendImageData(image: image)
+        delegate?.sendImageData(image: selectImage)
         dismiss(animated: true)
     }
-    
 }
 
 extension SearchViewController: UICollectionViewDataSourcePrefetching {
