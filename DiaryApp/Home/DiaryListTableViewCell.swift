@@ -31,6 +31,13 @@ class DiaryListTableViewCell: UITableViewCell {
         return view
     }()
     
+    let regDateLabel: UILabel = {
+        let view = UILabel()
+        view.backgroundColor = .lightGray
+        
+        return view
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -44,7 +51,7 @@ class DiaryListTableViewCell: UITableViewCell {
     }
     
     func configureUI() {
-        [preImageView, titleLabel, dateLabel].forEach {
+        [preImageView, titleLabel, dateLabel, regDateLabel].forEach {
             self.addSubview($0)
         }
     }
@@ -69,6 +76,13 @@ class DiaryListTableViewCell: UITableViewCell {
             make.leading.equalTo(titleLabel.snp.leading)
             make.height.equalTo(20)
             make.width.equalTo(200)
+        }
+        
+        regDateLabel.snp.makeConstraints { make in
+            make.leading.equalTo(dateLabel.snp.leading)
+            make.height.equalTo(dateLabel.snp.height)
+            make.width.equalTo(dateLabel.snp.width)
+            make.top.equalTo(dateLabel.snp.bottom).offset(10)
         }
     }
 }
