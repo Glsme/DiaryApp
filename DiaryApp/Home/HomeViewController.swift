@@ -33,7 +33,7 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func plusButtonCliced() {
-        transViewController(ViewController: DiaryViewController(), type: .push)
+        transViewController(ViewController: DiaryViewController(), type: .presentFullScreenNavigation)
     }
 
 }

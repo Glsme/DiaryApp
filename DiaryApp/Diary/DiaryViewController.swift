@@ -29,7 +29,20 @@ class DiaryViewController: BaseViewController {
     }
 
     override func configure() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down"), style: .plain, target: self, action: #selector(saveButtonCliced))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(cancelButtonCliced))
+        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.rightBarButtonItem?.tintColor = .black
+        
         diaryView.searchButton.addTarget(self, action: #selector(searchButtonClicked(_:)), for: .touchUpInside)
+    }
+    
+    @objc func saveButtonCliced() {
+        dismiss(animated: true)
+    }
+    
+    @objc func cancelButtonCliced() {
+        dismiss(animated: true)
     }
     
     @objc func searchButtonClicked(_ sender: UIButton) {
