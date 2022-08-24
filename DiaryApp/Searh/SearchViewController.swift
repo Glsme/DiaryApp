@@ -14,6 +14,11 @@ class SearchViewController: BaseViewController {
     var totalCount = 0
     var imageList: [String] = []
     
+    // image 관련
+    var delegate: SelectImageDelegate?
+    var selectImage: UIImage?
+    var selectIndexPath: IndexPath?
+    
     override func loadView() {
         self.view = searchView
     }
@@ -43,7 +48,14 @@ class SearchViewController: BaseViewController {
     }
     
     @objc func selectButtonClciked() {
-        
+        guard let selectImage = selectImage else {
+            self.view.makeToast("사진을 선택해주세요")
+            return
+        }
+
+        delegate?.sendImageData(image: selectImage)
+        print(selectImage)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
@@ -95,16 +107,24 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.reuseIdentifier, for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
         
         cell.imageView.kf.setImage(with: URL(string: imageList[indexPath.item]))
-//        cell.setImage(data: imageList[indexPath.item])
+        cell.layer.borderWidth = selectIndexPath == indexPath ? 4 : 0
+        cell.layer.borderColor = selectIndexPath == indexPath ? UIColor.red.cgColor : nil
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
+        guard let cell = collectionView.cellForItem(at: indexPath) as? SearchCollectionViewCell else { return }
         
-        DiaryViewController.currentImage = imageList[indexPath.item]
-        
-        self.navigationController?.popViewController(animated: true)
+        selectImage = cell.imageView.image
+        selectIndexPath = indexPath
+        collectionView.reloadData()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        selectIndexPath = nil
+        selectImage = nil
+        collectionView.reloadData()
+    }
+    
 }
