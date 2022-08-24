@@ -16,7 +16,6 @@ class DiaryView: BaseView {
         view.contentMode = .scaleAspectFit
         view.clipsToBounds = true
         view.layer.cornerRadius = 5
-        view.image = UIImage(systemName: "star")
         
         return view
     }()

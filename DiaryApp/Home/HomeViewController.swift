@@ -31,6 +31,16 @@ class HomeViewController: BaseViewController {
         print("Realm is located at:", localRealm.configuration.fileURL!)    // Realm file directory
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        fetchRealm()
+    }
+    
+    func fetchRealm() {
+        tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryDate", ascending: false)
+    }
+    
     override func configure() {
         super.configure()
         
@@ -59,9 +69,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = tasks[indexPath.row].diaryTitle
         cell.dateLabel.text = String(describing: tasks[indexPath.row].diaryDate)
         cell.regDateLabel.text = String(describing: tasks[indexPath.row].regDate)
+        cell.preImageView.image = loadImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
         
         return cell
     }
     
-    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            if let task = tasks?[indexPath.row] {
+//                try! localRealm.write {
+//                    localRealm.delete(task)
+//                    removeImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
+//                    print("delete Succeed")
+//                }
+//            }
+//        }
+//    }
 }

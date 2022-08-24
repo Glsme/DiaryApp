@@ -39,7 +39,6 @@ class DiaryViewController: BaseViewController {
     }
     
     @objc func saveButtonCliced() {
-        
         guard let title = diaryView.firstTextField.text, !diaryView.firstTextField.text!.isEmpty else {
             self.view.makeToast("제목을 입력해주세요")
             return
@@ -55,10 +54,25 @@ class DiaryViewController: BaseViewController {
         try! localRealm.write {
             localRealm.add(task)
             print("Realm Succeed")
-
+        }
+        
+        if let image = diaryView.selectImageView.image {
+            saveImageToDocument(fileName: "\(task.objectId).jpg", image: image)
         }
         
         dismiss(animated: true)
+    }
+    
+    func saveImageToDocument(fileName: String, image: UIImage) {
+        guard let documnetDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        let fileURL = documnetDirectory.appendingPathComponent(fileName)
+        guard let data = image.jpegData(compressionQuality: 0.5) else { return }
+        
+        do {
+            try data.write(to: fileURL)
+        } catch let error {
+            print("file save error", error)
+        }
     }
     
     @objc func cancelButtonCliced() {
