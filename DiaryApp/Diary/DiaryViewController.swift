@@ -9,9 +9,11 @@ import UIKit
 import RealmSwift
 import Toast
 
+protocol SelectImageDelegate {
+    func sendImageData(image: UIImage)
+}
+
 class DiaryViewController: BaseViewController {
-    
-    static var currentImage = ""
     
     let localRealm = try! Realm()
     
@@ -29,7 +31,6 @@ class DiaryViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        changeImage(image: DiaryViewController.currentImage)
     }
 
     override func configure() {
@@ -71,13 +72,7 @@ class DiaryViewController: BaseViewController {
     @objc func searchButtonClicked(_ sender: UIButton) {
         print(#function)
         
-        transViewController(ViewController: SearchViewController(), type: .push)
-    }
-    
-    func changeImage(image: String) {
-        if image != "" {
-            diaryView.selectImageView.kf.setImage(with: URL(string: image))
-        }
+        transViewController(ViewController: SearchViewController(), type: .presentFullScreenNavigation)
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchViewController: BaseViewController {
     
@@ -26,7 +27,6 @@ class SearchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "선택", style: .done, target: self, action: #selector(selectButtonClciked))
     }
     
     override func configure() {
@@ -35,6 +35,9 @@ class SearchViewController: BaseViewController {
         searchView.imageCollectionView.prefetchDataSource = self
         searchView.imageCollectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: SearchCollectionViewCell.reuseIdentifier)
         searchView.searchBar.delegate = self
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "선택", style: .done, target: self, action: #selector(selectButtonClciked))
+        self.navigationItem.rightBarButtonItem?.tintColor = .black
     }
     
     func fetchImage(query: String) {
@@ -48,14 +51,13 @@ class SearchViewController: BaseViewController {
     }
     
     @objc func selectButtonClciked() {
-        guard let selectImage = selectImage else {
+        guard let image = selectImage else {
             self.view.makeToast("사진을 선택해주세요")
             return
         }
 
-        delegate?.sendImageData(image: selectImage)
-        print(selectImage)
-        self.navigationController?.popViewController(animated: true)
+        delegate?.sendImageData(image: image)
+        dismiss(animated: true)
     }
     
 }

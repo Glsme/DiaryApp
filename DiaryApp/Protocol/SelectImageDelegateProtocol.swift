@@ -7,6 +7,4 @@
 
 import UIKit
 
-protocol SelectImageDelegate {
-    func sendImageData(image: UIImage)
-}
+
