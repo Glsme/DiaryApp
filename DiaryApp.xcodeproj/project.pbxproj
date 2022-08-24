@@ -33,6 +33,7 @@
 		85788C0C28B3CC31008EC5E0 /* UnSplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C0B28B3CC31008EC5E0 /* UnSplashAPIManager.swift */; };
 		85788C1228B602AD008EC5E0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C1128B602AD008EC5E0 /* HomeViewController.swift */; };
 		85788C1428B60407008EC5E0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C1328B60407008EC5E0 /* HomeView.swift */; };
+		85788C1628B6077F008EC5E0 /* DiaryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C1528B6077F008EC5E0 /* DiaryListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		85788C0B28B3CC31008EC5E0 /* UnSplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnSplashAPIManager.swift; sourceTree = "<group>"; };
 		85788C1128B602AD008EC5E0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		85788C1328B60407008EC5E0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		85788C1528B6077F008EC5E0 /* DiaryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 			children = (
 				85788C1128B602AD008EC5E0 /* HomeViewController.swift */,
 				85788C1328B60407008EC5E0 /* HomeView.swift */,
+				85788C1528B6077F008EC5E0 /* DiaryListTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				8564B60728B0D749001A02BD /* LightGrayBordTextField.swift in Sources */,
 				85788C0128B3C5AF008EC5E0 /* NaverAPIManager.swift in Sources */,
 				85788C0A28B3C74E008EC5E0 /* EndPoint.swift in Sources */,
+				85788C1628B6077F008EC5E0 /* DiaryListTableViewCell.swift in Sources */,
 				85788BFE28B3C3C1008EC5E0 /* APIKey.swift in Sources */,
 				85788BDE28B116C3008EC5E0 /* SearchView.swift in Sources */,
 			);

@@ -12,7 +12,8 @@ class HomeView: BaseView {
     
     let diaryListTableView: UITableView = {
         let view = UITableView()
-        view.backgroundColor = .lightGray
+        view.rowHeight = 150
+        
         return view
     }()
     

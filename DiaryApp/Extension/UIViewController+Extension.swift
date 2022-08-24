@@ -10,7 +10,8 @@ import UIKit
 extension UIViewController {
     
     enum Transition {
-        case push, present
+        case push
+        case present
     }
     
     func transViewController<T: UIViewController>(ViewController vc: T, type: Transition) {
