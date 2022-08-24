@@ -49,12 +49,18 @@ class HomeViewController: BaseViewController {
         homeView.diaryListTableView.register(DiaryListTableViewCell.self, forCellReuseIdentifier: DiaryListTableViewCell.reuseIdentifier)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(plusButtonCliced))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(settingButtonClicked))
         navigationItem.rightBarButtonItem?.tintColor = .black
+        navigationItem.leftBarButtonItem?.tintColor = .black
 
     }
     
     @objc func plusButtonCliced() {
         transViewController(ViewController: DiaryViewController(), type: .presentFullScreenNavigation)
+    }
+    
+    @objc func settingButtonClicked() {
+        
     }
 }
 

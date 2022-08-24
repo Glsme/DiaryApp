@@ -40,6 +40,7 @@
 		85788C2128B63411008EC5E0 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 85788C2028B63411008EC5E0 /* Toast */; };
 		85788C2328B66114008EC5E0 /* SelectImageDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C2228B66114008EC5E0 /* SelectImageDelegateProtocol.swift */; };
 		85788C2728B66FA0008EC5E0 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85788C2628B66FA0008EC5E0 /* FileManager+Extension.swift */; };
+		85E7EFBE28B6836100B2B9F5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E7EFBD28B6836100B2B9F5 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		85788C1D28B626F4008EC5E0 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		85788C2228B66114008EC5E0 /* SelectImageDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageDelegateProtocol.swift; sourceTree = "<group>"; };
 		85788C2628B66FA0008EC5E0 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		85E7EFBD28B6836100B2B9F5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		8564B5E628B0D44A001A02BD /* DiaryApp */ = {
 			isa = PBXGroup;
 			children = (
+				85788C2828B68329008EC5E0 /* Setting */,
 				85788C1C28B626E4008EC5E0 /* Realm */,
 				85788C1028B6024E008EC5E0 /* Home */,
 				85788BFF28B3C585008EC5E0 /* APIManager */,
@@ -221,6 +224,14 @@
 			path = Realm;
 			sourceTree = "<group>";
 		};
+		85788C2828B68329008EC5E0 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				85E7EFBD28B6836100B2B9F5 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -328,6 +339,7 @@
 				85788C1E28B626F4008EC5E0 /* RealmModel.swift in Sources */,
 				8564B60728B0D749001A02BD /* LightGrayBordTextField.swift in Sources */,
 				85788C0128B3C5AF008EC5E0 /* NaverAPIManager.swift in Sources */,
+				85E7EFBE28B6836100B2B9F5 /* SettingViewController.swift in Sources */,
 				85788C0A28B3C74E008EC5E0 /* EndPoint.swift in Sources */,
 				85788C1628B6077F008EC5E0 /* DiaryListTableViewCell.swift in Sources */,
 				85788BFE28B3C3C1008EC5E0 /* APIKey.swift in Sources */,

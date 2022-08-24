@@ -12,28 +12,28 @@ class DiaryListTableViewCell: UITableViewCell {
     
     let preImageView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .lightGray
+//        view.backgroundColor = .lightGray
         
         return view
     }()
     
     let titleLabel: UILabel = {
         let view = UILabel()
-        view.backgroundColor = .darkGray
+//        view.backgroundColor = .darkGray
         
         return view
     }()
     
     let dateLabel: UILabel = {
         let view = UILabel()
-        view.backgroundColor = .lightGray
+//        view.backgroundColor = .lightGray
         
         return view
     }()
     
     let regDateLabel: UILabel = {
         let view = UILabel()
-        view.backgroundColor = .lightGray
+//        view.backgroundColor = .lightGray
         
         return view
     }()
