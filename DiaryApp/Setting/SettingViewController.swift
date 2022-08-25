@@ -65,13 +65,89 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         urlPaths.append(URL(string: realmFile.path)!)
         
         //백업 파일을 압축: URL
+        do {
+            let zipFilePath = try Zip.quickZipFiles(urlPaths, fileName: "SeSACDiary_1")
+            print("Archive Location: \(zipFilePath)")
+            //ActivityViewController
+            showActivityViewController()
+        } catch {
+            self.view.makeToast("압축을 실패했습니다.")
+        }
+    }
+    
+    func showActivityViewController() {
+        //도큐먼트 위치에 백업 파일 확인
+        guard let path = documentDirectoryPath() else {
+            self.view.makeToast("도큐먼트 위치에 오류가 있습니다")
+            return
+        }
         
-        //ActivityViewController
+        let backupFileURL = path.appendingPathComponent("SeSACDiary_1.zip")
         
+        let vc = UIActivityViewController(activityItems: [backupFileURL], applicationActivities: [])
+        self.present(vc, animated: true)
     }
     
     @objc func restoreButtonClicked() {
         print(#function)
+        
+        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.archive], asCopy:  true)
+        documentPicker.delegate = self
+        documentPicker.allowsMultipleSelection = false
+        self.present(documentPicker, animated: true)
+    }
+}
 
+
+extension SettingViewController: UIDocumentPickerDelegate {
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        print(#function)
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let selectedFileURL = urls.first else {
+            self.view.makeToast("선택하신 파일에 오류가 있습니다.")
+            return
+        }
+        
+        guard let path = documentDirectoryPath() else {
+            self.view.makeToast("도큐먼트 위치에 오류가 있습니다")
+            return
+        }
+        
+        //경로의 마지막 패스(파일.확장자 ex: file.zip)를 저장
+        let sandboxFileURL = path.appendingPathComponent(selectedFileURL.lastPathComponent)
+        
+        if FileManager.default.fileExists(atPath: sandboxFileURL.path) {
+            let fileURL = path.appendingPathComponent("SeSACDiary_1.zip")
+            
+            do {
+                try Zip.unzipFile(fileURL, destination: path, overwrite: true, password: nil, progress: { progress in
+                    print("progress: \(progress)")
+                }, fileOutputHandler: { unzippedFile in
+                    print("unzippedFile: \(unzippedFile)")
+                    self.view.makeToast("복구가 완료되었습니다.")
+                })
+            } catch {
+                self.view.makeToast("압축 해제에 실패했습니다.")
+            }
+            
+        } else {
+            do {
+                //파일 앱의 zip -> 도큐먼트 폴더에 복사
+                try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
+                
+                let fileURL = path.appendingPathComponent("SeSACDiary_1.zip")
+                
+                try Zip.unzipFile(fileURL, destination: path, overwrite: true, password: nil, progress: { progress in
+                    print("progress: \(progress)")
+                }, fileOutputHandler: { unzippedFile in
+                    print("unzippedFile: \(unzippedFile)")
+                    self.view.makeToast("복구가 완료되었습니다.")
+                })
+            } catch {
+                self.view.makeToast("압축 해제에 실패했습니다.")
+            }
+        }
     }
 }
