@@ -30,6 +30,13 @@ class SettingViewController: BaseViewController {
         //Button add Target
         settingView.backUpButton.addTarget(self, action: #selector(backupButtonClicked), for: .touchUpInside)
         settingView.restoreButton.addTarget(self, action: #selector(restoreButtonClicked), for: .touchUpInside)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
+        navigationItem.leftBarButtonItem?.tintColor = .black
+    }
+    
+    @objc func closeButtonClicked() {
+        dismiss(animated: true)
     }
 }
 
@@ -144,6 +151,8 @@ extension SettingViewController: UIDocumentPickerDelegate {
                 }, fileOutputHandler: { unzippedFile in
                     print("unzippedFile: \(unzippedFile)")
                     self.view.makeToast("복구가 완료되었습니다.")
+                    
+                    self.dismiss(animated: true)
                 })
             } catch {
                 self.view.makeToast("압축 해제에 실패했습니다.")

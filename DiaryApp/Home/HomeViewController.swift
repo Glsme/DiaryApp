@@ -29,6 +29,7 @@ class HomeViewController: BaseViewController {
 
         tasks = localRealm.objects(UserDiary.self)
         print("Realm is located at:", localRealm.configuration.fileURL!)    // Realm file directory
+        fetchDocumentZipFile()
     }
     
     override func viewWillAppear(_ animated: Bool) {
