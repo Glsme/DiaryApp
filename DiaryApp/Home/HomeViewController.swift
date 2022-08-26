@@ -10,9 +10,10 @@ import RealmSwift
 
 class HomeViewController: BaseViewController {
     
+    let repository = UserDiaryRepository()
+    
     let homeView = HomeView()
     
-    let localRealm = try! Realm()
     var tasks: Results<UserDiary>! {
         didSet {
             homeView.diaryListTableView.reloadData()
@@ -27,8 +28,8 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tasks = localRealm.objects(UserDiary.self)
-        print("Realm is located at:", localRealm.configuration.fileURL!)    // Realm file directory
+        tasks = repository.localRealm.objects(UserDiary.self)
+        print("Realm is located at:", repository.localRealm.configuration.fileURL!)    // Realm file directory
         fetchDocumentZipFile()
     }
     
@@ -39,7 +40,7 @@ class HomeViewController: BaseViewController {
     }
     
     func fetchRealm() {
-        tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryDate", ascending: false)
+        tasks = repository.localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryDate", ascending: false)
     }
     
     override func configure() {
@@ -88,8 +89,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
             self.removeImageFromDocument(fileName: "\(self.tasks[indexPath.row].objectId).jpg")
 
-            try! self.localRealm.write {
-                self.localRealm.delete(self.tasks[indexPath.row])
+            try! self.repository.localRealm.write {
+                self.repository.localRealm.delete(self.tasks[indexPath.row])
                 
             }
                         

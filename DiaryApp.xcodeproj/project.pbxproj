@@ -43,6 +43,7 @@
 		857A176F28B684030048D81A /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A176E28B684030048D81A /* SettingView.swift */; };
 		857A177128B6882B0048D81A /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A177028B6882B0048D81A /* SettingTableViewCell.swift */; };
 		857A177428B701640048D81A /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 857A177328B701640048D81A /* Zip */; };
+		857A179C28B8558E0048D81A /* UserDiaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A179B28B8558E0048D81A /* UserDiaryRepository.swift */; };
 		85E7EFBE28B6836100B2B9F5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E7EFBD28B6836100B2B9F5 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		85788C2628B66FA0008EC5E0 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		857A176E28B684030048D81A /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		857A177028B6882B0048D81A /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		857A179B28B8558E0048D81A /* UserDiaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDiaryRepository.swift; sourceTree = "<group>"; };
 		85E7EFBD28B6836100B2B9F5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				85788C1D28B626F4008EC5E0 /* RealmModel.swift */,
+				857A179B28B8558E0048D81A /* UserDiaryRepository.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				8564B60228B0D5BF001A02BD /* DiaryViewController.swift in Sources */,
 				8564B5EA28B0D44A001A02BD /* SceneDelegate.swift in Sources */,
 				85788C2328B66114008EC5E0 /* SelectImageDelegateProtocol.swift in Sources */,
+				857A179C28B8558E0048D81A /* UserDiaryRepository.swift in Sources */,
 				85788C1E28B626F4008EC5E0 /* RealmModel.swift in Sources */,
 				8564B60728B0D749001A02BD /* LightGrayBordTextField.swift in Sources */,
 				85788C0128B3C5AF008EC5E0 /* NaverAPIManager.swift in Sources */,
