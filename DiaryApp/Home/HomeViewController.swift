@@ -24,10 +24,10 @@ class HomeViewController: BaseViewController {
     override func loadView() {
         self.view = homeView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tasks = repository.localRealm.objects(UserDiary.self)
         print("Realm is located at:", repository.localRealm.configuration.fileURL!)    // Realm file directory
         fetchDocumentZipFile()
@@ -40,7 +40,7 @@ class HomeViewController: BaseViewController {
     }
     
     func fetchRealm() {
-        tasks = repository.localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryDate", ascending: false)
+        tasks = repository.fetch()
     }
     
     override func configure() {
@@ -54,7 +54,7 @@ class HomeViewController: BaseViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(settingButtonClicked))
         navigationItem.rightBarButtonItem?.tintColor = .black
         navigationItem.leftBarButtonItem?.tintColor = .black
-
+        
     }
     
     @objc func plusButtonCliced() {
@@ -82,18 +82,28 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let favorite = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
+            
+            //  Realm data update
+            self.repository.updateFavorite(item: self.tasks[indexPath.row])
+            self.fetchRealm()
+
+        }
+        
+        let image = tasks[indexPath.row].favorite ? "star.fill" : "star"
+        favorite.image = UIImage(systemName: image)
+        favorite.backgroundColor = .systemRed
+        
+        return UISwipeActionsConfiguration(actions: [favorite])
+    }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let favorite = UIContextualAction(style: .normal, title: "삭제") { action, view, completionHandler in
             
             let task = self.tasks[indexPath.row]
-            
-            self.removeImageFromDocument(fileName: "\(self.tasks[indexPath.row].objectId).jpg")
 
-            try! self.repository.localRealm.write {
-                self.repository.localRealm.delete(self.tasks[indexPath.row])
-                
-            }
-                        
+            self.repository.delete(item: task)
             self.fetchRealm()
         }
         
@@ -102,15 +112,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [favorite])
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            if let task = tasks?[indexPath.row] {
-//                try! localRealm.write {
-//                    localRealm.delete(task)
-//                    removeImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
-//                    print("delete Succeed")
-//                }
-//            }
-//        }
-//    }
+    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    //        if editingStyle == .delete {
+    //            if let task = tasks?[indexPath.row] {
+    //                try! localRealm.write {
+    //                    localRealm.delete(task)
+    //                    removeImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
+    //                    print("delete Succeed")
+    //                }
+    //            }
+    //        }
+    //    }
 }
