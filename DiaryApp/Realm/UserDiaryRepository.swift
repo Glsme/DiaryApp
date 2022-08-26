@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class UserDiaryRepository {
+class UserDiaryRepository: UserDiaryRepositoryType {
     let localRealm = try! Realm()
     
     func fetch() -> Results<UserDiary> {
