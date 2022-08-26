@@ -8,10 +8,12 @@
 import Foundation
 import RealmSwift
 
+// 여러개의 테이블 => CRUD
 protocol UserDiaryRepositoryType {
     func fetch() -> Results<UserDiary>
     func fetchSort() -> Results<UserDiary>
     func fetchFilter() -> Results<UserDiary>
     func updateFavorite(item: UserDiary)
     func delete(item: UserDiary)
+    func addItem(item: UserDiary)
 }

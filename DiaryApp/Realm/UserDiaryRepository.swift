@@ -47,4 +47,8 @@ class UserDiaryRepository: UserDiaryRepositoryType {
             print(error)
         }
     }
+    
+    func addItem(item: UserDiary) {
+        
+    }
 }

@@ -45,6 +45,7 @@
 		857A177428B701640048D81A /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 857A177328B701640048D81A /* Zip */; };
 		857A179C28B8558E0048D81A /* UserDiaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A179B28B8558E0048D81A /* UserDiaryRepository.swift */; };
 		857A179E28B85DDB0048D81A /* UserDiaryRepositoryTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A179D28B85DDB0048D81A /* UserDiaryRepositoryTypeProtocol.swift */; };
+		857A17A128B8619B0048D81A /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 857A17A028B8619B0048D81A /* FSCalendar */; };
 		85E7EFBE28B6836100B2B9F5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E7EFBD28B6836100B2B9F5 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 				85788C0428B3C6A2008EC5E0 /* Alamofire in Frameworks */,
 				85788BF928B36384008EC5E0 /* Kingfisher in Frameworks */,
 				85788C0728B3C6AD008EC5E0 /* SwiftyJSON in Frameworks */,
+				857A17A128B8619B0048D81A /* FSCalendar in Frameworks */,
 				8564B60A28B0DAE2001A02BD /* SnapKit in Frameworks */,
 				85788C2128B63411008EC5E0 /* Toast in Frameworks */,
 				857A177428B701640048D81A /* Zip in Frameworks */,
@@ -271,6 +273,7 @@
 				85788C1A28B621E8008EC5E0 /* RealmSwift */,
 				85788C2028B63411008EC5E0 /* Toast */,
 				857A177328B701640048D81A /* Zip */,
+				857A17A028B8619B0048D81A /* FSCalendar */,
 			);
 			productName = DiaryApp;
 			productReference = 8564B5E428B0D44A001A02BD /* DiaryApp.app */;
@@ -308,6 +311,7 @@
 				85788C1728B621E8008EC5E0 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				85788C1F28B63410008EC5E0 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				857A177228B701630048D81A /* XCRemoteSwiftPackageReference "Zip" */,
+				857A179F28B8619B0048D81A /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 8564B5E528B0D44A001A02BD /* Products */;
 			projectDirPath = "";
@@ -639,6 +643,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		857A179F28B8619B0048D81A /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -681,6 +693,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 857A177228B701630048D81A /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
+		};
+		857A17A028B8619B0048D81A /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 857A179F28B8619B0048D81A /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
