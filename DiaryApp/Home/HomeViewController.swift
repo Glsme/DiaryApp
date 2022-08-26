@@ -81,6 +81,26 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let favorite = UIContextualAction(style: .normal, title: "삭제") { action, view, completionHandler in
+            
+            let task = self.tasks[indexPath.row]
+            
+            self.removeImageFromDocument(fileName: "\(self.tasks[indexPath.row].objectId).jpg")
+
+            try! self.localRealm.write {
+                self.localRealm.delete(self.tasks[indexPath.row])
+                
+            }
+                        
+            self.fetchRealm()
+        }
+        
+        favorite.backgroundColor = .systemRed
+        
+        return UISwipeActionsConfiguration(actions: [favorite])
+    }
+    
 //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 //        if editingStyle == .delete {
 //            if let task = tasks?[indexPath.row] {
