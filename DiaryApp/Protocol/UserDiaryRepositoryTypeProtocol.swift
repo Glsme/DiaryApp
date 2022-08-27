@@ -13,6 +13,7 @@ protocol UserDiaryRepositoryType {
     func fetch() -> Results<UserDiary>
     func fetchSort() -> Results<UserDiary>
     func fetchFilter() -> Results<UserDiary>
+    func fetchDate(date: Date) -> Results<UserDiary>
     func updateFavorite(item: UserDiary)
     func delete(item: UserDiary)
     func addItem(item: UserDiary)

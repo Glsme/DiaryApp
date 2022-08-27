@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import FSCalendar
 
 class HomeViewController: BaseViewController {
     
@@ -20,6 +21,12 @@ class HomeViewController: BaseViewController {
             print("TableView reloaded")
         }
     }
+    
+    let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyMMdd"
+        return formatter
+    }()
     
     override func loadView() {
         self.view = homeView
@@ -48,6 +55,9 @@ class HomeViewController: BaseViewController {
         
         homeView.diaryListTableView.delegate = self
         homeView.diaryListTableView.dataSource = self
+        homeView.calendar.delegate = self
+        homeView.calendar.dataSource = self
+        
         homeView.diaryListTableView.register(DiaryListTableViewCell.self, forCellReuseIdentifier: DiaryListTableViewCell.reuseIdentifier)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(plusButtonCliced))
@@ -88,7 +98,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             //  Realm data update
             self.repository.updateFavorite(item: self.tasks[indexPath.row])
             self.fetchRealm()
-
+            
         }
         
         let image = tasks[indexPath.row].favorite ? "star.fill" : "star"
@@ -102,7 +112,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let favorite = UIContextualAction(style: .normal, title: "삭제") { action, view, completionHandler in
             
             let task = self.tasks[indexPath.row]
-
+            
             self.repository.delete(item: task)
             self.fetchRealm()
         }
@@ -123,4 +133,32 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     //            }
     //        }
     //    }
+}
+
+extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource {
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        return repository.fetchDate(date: date).count
+    }
+    
+//    func calendar(_ calendar: FSCalendar, titleFor date: Date) -> String? {
+//        return "새싹"
+//    }
+    
+//    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+//        return UIImage(systemName: "star.fill")
+//    }
+    
+//    func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
+//        <#code#>
+//    }
+    
+    // date: yyyyMMdd hh:mm:ss => dateFormatter
+    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
+        return formatter.string(from: date) == "220907" ? "오프라인 모임" : nil
+    }
+    
+    //100 -> 25일 3 -> 3
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        tasks = repository.fetchDate(date: date)
+    }
 }

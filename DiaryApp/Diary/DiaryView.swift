@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class DiaryView: BaseView {
+final class DiaryView: BaseView {
     
     let selectImageView: UIImageView = {
         let view = UIImageView()

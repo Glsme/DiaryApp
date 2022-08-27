@@ -9,7 +9,12 @@ import UIKit
 import RealmSwift
 
 class UserDiaryRepository: UserDiaryRepositoryType {
+    
     let localRealm = try! Realm()
+    
+    func fetchDate(date: Date) -> Results<UserDiary> {
+        return localRealm.objects(UserDiary.self).filter("diaryDate >= %@ AND diaryDate < %@", date, Date(timeInterval: 86400, since: date)) // NSPredicate
+    }
     
     func fetch() -> Results<UserDiary> {
         return localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryDate", ascending: false)
